@@ -11,7 +11,8 @@ var audiolen=document.querySelectorAll(".mybutton").length;
 for(var i=0; i<audiolen; i++){
   document.querySelectorAll(".mybutton")[i].addEventListener("click",function(){
     var mytext=this.innerHTML;
-    audioplay(mytext)
+    audioplay(mytext);
+    myanimation(mytext);
 
    
   })
@@ -39,4 +40,12 @@ function audioplay(mytext){
          break;
       
  }
+}
+function myanimation(mytext){
+ var mysetbutton= document.querySelector("."+ mytext);
+ mysetbutton.classList.add("anim");
+
+ setTimeout(function(){
+  mysetbutton.classList.remove("anim");
+ },2000);
 }
